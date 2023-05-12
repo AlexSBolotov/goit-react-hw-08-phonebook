@@ -1,0 +1,14 @@
+.button {
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  margin-left: 12px;
+}
+.button:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+.button:active {
+  scale: 0.95;
+}

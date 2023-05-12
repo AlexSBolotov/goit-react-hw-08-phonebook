@@ -1,8 +1,8 @@
 import s from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+// import { nanoid } from '@reduxjs/toolkit';
+import { selectContacts } from 'redux/contacts/contactSelectors';
+import { addContact } from 'redux/contacts/contactOperations';
 
 export default function ContactForm() {
   const contacts = useSelector(selectContacts);
@@ -19,7 +19,7 @@ export default function ContactForm() {
     const payload = {
       name: name,
       number: number,
-      id: nanoid(),
+      // id: nanoid(),
     };
     isNamesDublicated
       ? alert(`${name} is already in contacts.`)

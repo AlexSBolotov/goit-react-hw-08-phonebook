@@ -1,12 +1,12 @@
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
+import ContactForm from 'components/ContactForm/ContactForm';
+import Filter from 'components/Filter/Filter';
+import ContactList from 'components/ContactList/ContactList';
 import { useEffect } from 'react';
-import { selectIsLoading, selectError } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import { selectIsLoading, selectError } from 'redux/contacts/contactSelectors';
+import { fetchContacts } from 'redux/contacts/contactOperations';
 import { useSelector, useDispatch } from 'react-redux';
 
-export function App() {
+export default function ContactsView() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -14,15 +14,14 @@ export function App() {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
   return (
-    <main>
+    <>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
       {isLoading && !error && <p>Loading tasks...</p>}
       <ContactList />
-    </main>
+    </>
   );
 }
