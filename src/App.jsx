@@ -1,8 +1,11 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshCurrentUser } from 'redux/auth/authOperations';
+import { selectIsLoading } from 'redux/auth/authSelectors';
 import SharedLayout from 'components/SharedLayout/SharedLeyout';
+import PrivateRoute from 'PrivateRoute';
+import PublicRoute from 'PublicRoute';
 
 const HomeView = lazy(() => import('views/HomeView'));
 const RegisterView = lazy(() => import('views/RegisterView'));
@@ -14,7 +17,8 @@ const ContactsView = lazy(() => import('views/ContactsView'));
 
 export function App() {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
+  const isCurrentLoading = useSelector(selectIsLoading);
+  console.log('isLoading', isCurrentLoading);
   // const error = useSelector(selectError);
 
   useEffect(() => {
@@ -24,11 +28,37 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomeView />} />
-        <Route path="register" element={<RegisterView />} />
-        <Route path="login" element={<LoginView />} />
-        <Route path="contacts" element={<ContactsView />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        {!isCurrentLoading && (
+          <>
+            <Route index element={<HomeView />} />
+            <Route
+              path="register"
+              element={
+                <PublicRoute restricted>
+                  <RegisterView />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <PublicRoute restricted>
+                  <LoginView />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute>
+                  <ContactsView />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route path="contacts" element={<ContactsView />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </>
+        )}
       </Route>
     </Routes>
   );
