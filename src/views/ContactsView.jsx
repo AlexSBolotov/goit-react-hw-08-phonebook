@@ -26,6 +26,7 @@ export default function ContactsView() {
     setShowModal(false);
     setContactToUpdate({});
   };
+
   return (
     <>
       {!showModal ? (
