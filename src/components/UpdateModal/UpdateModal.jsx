@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -46,8 +48,18 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
     <div className={s.overlay}>
       <div className={s.wrapper}>
         <h2>Update contact</h2>
-        <label htmlFor="name">Name</label>
-        <input
+        {/* <label htmlFor="name">Name</label> */}
+        <TextField
+          fullWidth
+          label="Change name"
+          id="name"
+          name="name"
+          value={name}
+          onChange={onInputChange}
+          placeholder="Enter contact name..."
+          required
+        />
+        {/* <input
           id="name"
           type="text"
           name="name"
@@ -56,9 +68,19 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+        /> */}
+        {/* <label htmlFor="number">Number</label> */}
+        <TextField
+          fullWidth
+          label="Change number"
+          id="number"
+          name="number"
+          value={number}
+          onChange={onInputChange}
+          placeholder="Enter contact phone number..."
+          required
         />
-        <label htmlFor="number">Number</label>
-        <input
+        {/* <input
           id="number"
           type="text"
           name="number"
@@ -67,14 +89,20 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-        />
+        /> */}
         <div className={s.btnWrapper}>
-          <button className={s.button} type="button" onClick={onUpdateClick}>
+          <Button variant="outlined" type="button" onClick={onUpdateClick}>
             Update
-          </button>
-          <button className={s.button} type="button" onClick={onCancelClick}>
+          </Button>
+          {/* <button className={s.button} type="button" onClick={onUpdateClick}>
+            Update
+          </button> */}
+          <Button variant="outlined" type="button" onClick={onCancelClick}>
             Cancel
-          </button>
+          </Button>
+          {/* <button className={s.button} type="button" onClick={onCancelClick}>
+            Cancel
+          </button> */}
         </div>
       </div>
     </div>,

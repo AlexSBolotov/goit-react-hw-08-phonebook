@@ -1,6 +1,13 @@
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: grey;
+  text-transform: uppercase;
+}
 .wrapper {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  /* margin-top: 10px;
+  margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   gap: 8px;

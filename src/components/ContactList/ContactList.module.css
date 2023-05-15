@@ -1,24 +1,49 @@
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: grey;
+  text-transform: uppercase;
+}
 .wrapper {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   gap: 8px;
   border: 1px solid grey;
-  width: 360px;
+  width: 480px;
   padding: 12px;
   border-radius: 6px;
 }
 .wrapper > li {
   display: flex;
+  gap: 8px;
+  /* flex-direction: column; */
+  /* justify-content: start; */
   justify-content: space-between;
 }
-.buttonWrapper {
+.textWrapper {
+  width: 100%;
   display: flex;
-  gap: 4px;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid grey;
 }
-.button {
+.textWrapper > p {
+  text-align: left;
+  color: grey;
+  margin: 0;
+}
+.buttonWrapper {
+  /* margin-top: 8px; */
+  display: flex;
+  /* flex-direction: column; */
+  gap: 4px;
+  justify-content: space-between;
+}
+/* .button {
   width: 80px;
   height: 30px;
   border-radius: 6px;
@@ -30,4 +55,4 @@
 }
 .button:active {
   scale: 0.95;
-}
+} */

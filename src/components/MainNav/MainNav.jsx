@@ -1,7 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import clsx from 'clsx';
 import s from './MainNav.module.css';
+// import Button from '@mui/material/Button';
+import clsx from 'clsx';
+
 import { selectIsLogin } from 'redux/auth/authSelectors';
 
 export default function MainNav() {
@@ -14,7 +16,8 @@ export default function MainNav() {
           return clsx(isActive ? s.active : s.link);
         }}
       >
-        <span>Home</span>
+        {/* <Button>Home</Button> */}
+        <span>HOME</span>
       </NavLink>
       {isLogin && (
         <NavLink
@@ -23,7 +26,8 @@ export default function MainNav() {
             return clsx(isActive ? s.active : s.link);
           }}
         >
-          <span>Contacts</span>
+          {/* <Button>Contacts</Button> */}
+          <span>CONTACTS</span>
         </NavLink>
       )}
     </nav>
