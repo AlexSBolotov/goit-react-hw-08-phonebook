@@ -28,7 +28,6 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
   const onCancelClick = () => {
     closeModal();
   };
-
   const onUpdateClick = () => {
     dispatch(
       updateContact({ id: contactToUpdate.id, name: name, number: number })
@@ -37,7 +36,6 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
   };
   const handleKeydown = e => {
     if (e.code === 'Escape') closeModal();
-    console.log(e.code);
   };
 
   useEffect(() => {
