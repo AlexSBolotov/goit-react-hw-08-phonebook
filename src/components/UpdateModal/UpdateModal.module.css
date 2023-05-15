@@ -1,9 +1,22 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+}
+
 .wrapper {
-  margin-top: 10px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
+  background-color: #fff;
   border: 1px solid grey;
   width: 360px;
   padding: 12px;
@@ -13,6 +26,10 @@
   height: 36px;
   border-radius: 6px;
   padding-left: 10px;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 .button {
   width: 100px;

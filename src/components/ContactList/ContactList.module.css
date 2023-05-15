@@ -14,8 +14,12 @@
   display: flex;
   justify-content: space-between;
 }
+.buttonWrapper {
+  display: flex;
+  gap: 4px;
+}
 .button {
-  width: 100px;
+  width: 80px;
   height: 30px;
   border-radius: 6px;
 }

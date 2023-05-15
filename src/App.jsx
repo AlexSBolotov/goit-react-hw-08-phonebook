@@ -12,14 +12,9 @@ const RegisterView = lazy(() => import('views/RegisterView'));
 const LoginView = lazy(() => import('views/LoginView'));
 const ContactsView = lazy(() => import('views/ContactsView'));
 
-// import { selectIsLoading, selectError } from 'redux/selectors';
-// import { fetchContacts } from 'redux/operations';
-
 export function App() {
   const dispatch = useDispatch();
   const isCurrentLoading = useSelector(selectIsLoading);
-  console.log('isLoading', isCurrentLoading);
-  // const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(refreshCurrentUser());
