@@ -1,5 +1,4 @@
 import s from './ContactList.module.css';
-// import s from '../ContactForm/ContactForm.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilteredContacts } from 'redux/contacts/contactSelectors';
 import { deleteContact } from 'redux/contacts/contactOperations';
@@ -19,7 +18,6 @@ export default function ContactList({ openModal }) {
           </div>
           <div className={s.buttonWrapper}>
             <Button
-              // variant="outlined"
               type="button"
               fullWidth
               size="small"
@@ -27,15 +25,7 @@ export default function ContactList({ openModal }) {
             >
               Update
             </Button>
-            {/* <button
-              className={s.button}
-              type="button"
-              onClick={() => openModal({ id, name, number })}
-            >
-              Update
-            </button> */}
             <Button
-              // variant="outlined"
               type="button"
               fullWidth
               size="small"
@@ -43,13 +33,6 @@ export default function ContactList({ openModal }) {
             >
               Delete
             </Button>
-            {/* <button
-              className={s.button}
-              type="button"
-              onClick={() => dispatch(deleteContact(id))}
-            >
-              Delete
-            </button> */}
           </div>
         </li>
       ))}

@@ -45,7 +45,6 @@ export default function LoginForm() {
   };
   return (
     <form className={s.wrapper} action="" onSubmit={onFormSubmit}>
-      {/* <label htmlFor="email">Email</label> */}
       <TextField
         fullWidth
         label="Email"
@@ -56,17 +55,6 @@ export default function LoginForm() {
         placeholder="Enter your email..."
         required
       />
-      {/* <input
-        id="email"
-        type="email"
-        name="email"
-        value={email}
-        onChange={handleChange}
-        placeholder="Enter your email..."
-        required
-      /> */}
-      {/* <label htmlFor="password">Password</label> */}
-
       <FormControl fullWidth required variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
@@ -91,32 +79,9 @@ export default function LoginForm() {
           placeholder="Enter your password..."
         />
       </FormControl>
-      {/* <TextField
-        fullWidth
-        label="Password"
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-        placeholder="Enter your password..."
-        required
-        
-      /> */}
-      {/* <input
-        id="password"
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-        placeholder="Enter your password..."
-        required
-      /> */}
       <Button variant="outlined" type="submit">
         Login
       </Button>
-      {/* <button className={s.button} type="submit">
-        Login
-      </button> */}
     </form>
   );
 }

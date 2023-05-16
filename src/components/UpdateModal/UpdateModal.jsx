@@ -48,7 +48,6 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
     <div className={s.overlay}>
       <div className={s.wrapper}>
         <h2>Update contact</h2>
-        {/* <label htmlFor="name">Name</label> */}
         <TextField
           fullWidth
           label="Change name"
@@ -59,17 +58,6 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
           placeholder="Enter contact name..."
           required
         />
-        {/* <input
-          id="name"
-          type="text"
-          name="name"
-          value={name}
-          onChange={onInputChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        /> */}
-        {/* <label htmlFor="number">Number</label> */}
         <TextField
           fullWidth
           label="Change number"
@@ -80,29 +68,13 @@ export default function UpdateModal({ closeModal, contactToUpdate }) {
           placeholder="Enter contact phone number..."
           required
         />
-        {/* <input
-          id="number"
-          type="text"
-          name="number"
-          value={number}
-          onChange={onInputChange}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-        /> */}
         <div className={s.btnWrapper}>
           <Button variant="outlined" type="button" onClick={onUpdateClick}>
             Update
           </Button>
-          {/* <button className={s.button} type="button" onClick={onUpdateClick}>
-            Update
-          </button> */}
           <Button variant="outlined" type="button" onClick={onCancelClick}>
             Cancel
           </Button>
-          {/* <button className={s.button} type="button" onClick={onCancelClick}>
-            Cancel
-          </button> */}
         </div>
       </div>
     </div>,

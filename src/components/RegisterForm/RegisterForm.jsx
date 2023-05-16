@@ -49,7 +49,6 @@ export default function RegisterForm() {
   };
   return (
     <form className={s.wrapper} action="" onSubmit={onFormSubmit}>
-      {/* <label htmlFor="name">Name</label> */}
       <TextField
         fullWidth
         label="Name"
@@ -60,16 +59,6 @@ export default function RegisterForm() {
         placeholder="Enter your name..."
         required
       />
-      {/* <input
-        id="name"
-        type="text"
-        name="name"
-        value={name}
-        onChange={handleChange}
-        placeholder="Enter your name..."
-        required
-      /> */}
-      {/* <label htmlFor="email">Email</label> */}
       <TextField
         fullWidth
         label="Email"
@@ -80,15 +69,6 @@ export default function RegisterForm() {
         placeholder="Enter your email..."
         required
       />
-      {/* <input
-        id="email"
-        type="email"
-        name="email"
-        value={email}
-        onChange={handleChange}
-        placeholder="Enter your email..."
-        required
-      /> */}
       <FormControl fullWidth required variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
@@ -113,22 +93,9 @@ export default function RegisterForm() {
           placeholder="Enter your password..."
         />
       </FormControl>
-      {/* <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleChange}
-        placeholder="Enter your password..."
-        required
-      /> */}
       <Button variant="outlined" type="submit">
         Register
       </Button>
-      {/* <button className={s.button} type="submit">
-        Register
-      </button> */}
     </form>
   );
 }

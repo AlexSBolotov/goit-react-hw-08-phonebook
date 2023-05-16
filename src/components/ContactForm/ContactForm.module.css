@@ -1,13 +1,5 @@
-h1 {
-  font-size: 24px;
-  font-weight: normal;
-  color: grey;
-  text-transform: uppercase;
-}
 .wrapper {
   margin: 20px auto;
-  /* margin-top: 10px;
-  margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -15,22 +7,4 @@ h1 {
   width: 360px;
   padding: 12px;
   border-radius: 6px;
-}
-.wrapper > input {
-  height: 36px;
-  border-radius: 6px;
-  padding-left: 10px;
-}
-.button {
-  width: 100px;
-  height: 30px;
-  border-radius: 6px;
-}
-.button:hover {
-  background-color: grey;
-  color: white;
-  cursor: pointer;
-}
-.button:active {
-  scale: 0.95;
 }
